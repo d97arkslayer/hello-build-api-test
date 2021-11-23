@@ -52,7 +52,7 @@ export const login = async (req: Request, res: Response) => {
 export const signup = async (req: Request, res: Response) => {
     const user: User = req.body;
     const existUser = await UserRepository.getUserByEmail(user.email) as User;
-    if (user) {
+    if (existUser) {
         return badRequestDuplicateEmail(res)
     }
     const created: boolean = await UserRepository.createUser(user)
