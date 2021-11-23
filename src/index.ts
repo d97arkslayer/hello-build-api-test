@@ -6,11 +6,13 @@ import bodyParser from "body-parser";
 import dao from "./repositories/dao";
 import userRoutes from "./routes/user";
 
+// Change .env data
 dotenv.config();
 
 const app = express();
 const port = process.env.PORT; // port to listen
 
+// start SQLite database
 dao.setupDbForDev();
 // Enable all CORS requests
 app.use(cors());
@@ -23,9 +25,5 @@ app.listen(port, () => {
 app.use(bodyParser.json());
 
 
-// define a route handler for the default home page
-app.get("/", (req, res) => {
-    res.send("Hello world!");
-});
-
+// Use user routes
 app.use('/api/users', userRoutes)

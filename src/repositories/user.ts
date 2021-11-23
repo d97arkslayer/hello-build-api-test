@@ -4,6 +4,7 @@ import * as bcrypt from "bcrypt";
 import User from "./../models/user"
 import logger from "../loggers/winston";
 
+// Load environment vars from .env
 dotenv.config();
 
 const saltRounds = Number(process.env.SALT_ROUNDS);

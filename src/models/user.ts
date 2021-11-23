@@ -1,5 +1,8 @@
 import {v4 as uuidv4} from "uuid";
 
+/**
+ * This is the model of user
+ */
 export default class User {
     id!: string;
     name: string;
