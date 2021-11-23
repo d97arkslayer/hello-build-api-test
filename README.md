@@ -21,6 +21,7 @@ To run this server without docker you must follow the next steps:
  1. Clone this repo.
  2. In the terminal of this downloaded repo execute: 
    ```bash
+    npm install
     npm run build
     npm run start
    ```
