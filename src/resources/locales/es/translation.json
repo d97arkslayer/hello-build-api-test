@@ -1,0 +1,6 @@
+{
+  "unauthorized": "Email o Contraseña incorrectos",
+  "bad_request.duplicate_email": "El email ya se encuentra registrado",
+  "created.user": "Te has registrado correctamente. Por favor inicia sesión",
+  "server_error.creating_user": "Ha habido un error creando el usuario intente mas tarde, por favor!"
+}

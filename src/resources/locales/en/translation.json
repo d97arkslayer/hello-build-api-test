@@ -1,0 +1,6 @@
+{
+  "unauthorized": "Incorrect Email or Password.",
+  "bad_request.duplicate_email": "Duplicate email.",
+  "created.user": "Success! You have successfully signed up. Please login to continue.",
+  "server_error.creating_user": "An expected error was appeared while signup process, please try later!"
+}
