@@ -1,6 +1,6 @@
 # HelloBuild server api (for entry test)
 
-## DOCKER
+## Docker
 
 To run this server with docker you must follow the next steps:
 
