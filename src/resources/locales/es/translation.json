@@ -1,6 +1,12 @@
 {
-  "unauthorized": "Email o Contraseña incorrectos",
+  "unauthorized": "La autorización ha fallado",
+  "unauthorized.credentials": "Email o Contraseña incorrectos",
   "bad_request.duplicate_email": "El email ya se encuentra registrado",
   "created.user": "Te has registrado correctamente. Por favor inicia sesión",
-  "server_error.creating_user": "Ha habido un error creando el usuario intente mas tarde, por favor!"
+  "server_error.creating_user": "Ha habido un error creando el usuario intente mas tarde, por favor!",
+  "creating_favorite": "Ha habido un error agregando el favorito",
+  "deleted.favorite": "Favorito eliminado correctamente",
+  "server_error.deleting_favorite": "Ha habido un error eliminando el favorito",
+  "not_found.favorite": "Favorito no encontrado",
+  "unauthorized.deleting_favorite": "Este favorito no pertenece a ti"
 }

@@ -27,9 +27,15 @@ export default class {
             const dropUsersTable = "DROP TABLE IF EXISTS users";
             db.run(dropUsersTable);
 
+            const dropFavoritesTable = "DROP TABLE IF EXISTS favorites";
+            db.run(dropFavoritesTable);
+
             // Create Tables:
             const createUsersTable = "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, lastname TEXT,email TEXT, password TEXT)";
             db.run(createUsersTable);
+
+            const createFavoritesTable = "CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY AUTOINCREMENT,  user_id INTEGER, name TEXT,url TEXT)";
+            db.run(createFavoritesTable);
 
             // Insert one default user
             const password = '123'
@@ -54,6 +60,22 @@ export default class {
                 return res(result);
             });
         })
+    }
+
+    /**
+     * Use to get all records with conditions
+     * @param stmt
+     * @param params
+     */
+    static all(stmt: string, params: any[]) {
+        return new Promise((res, rej) => {
+            db.all(stmt, params, (error, result) => {
+                if (error) {
+                    return rej(error.message);
+                }
+                return res(result);
+            });
+        });
     }
 
     /**

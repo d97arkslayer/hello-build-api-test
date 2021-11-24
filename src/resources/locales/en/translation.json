@@ -1,6 +1,12 @@
 {
-  "unauthorized": "Incorrect Email or Password.",
+  "unauthorized": "Invalid Token",
+  "unauthorized.credentials": "Incorrect Email or Password.",
   "bad_request.duplicate_email": "Duplicate email.",
   "created.user": "Success! You have successfully signed up. Please login to continue.",
-  "server_error.creating_user": "An expected error was appeared while signup process, please try later!"
+  "server_error.creating_user": "An unexpected error was appeared while signup process, please try later!",
+  "creating_favorite": "An unexpected error was appeared while adding favorite",
+  "deleted.favorite": "Favorite deleted",
+  "server_error.deleting_favorite": "An unexpected error was appeared while deleting favorite",
+  "not_found.favorite": "Favorite not found",
+  "unauthorized.deleting_favorite": "This favorite don't belongs to you"
 }
