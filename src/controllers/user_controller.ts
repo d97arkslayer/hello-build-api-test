@@ -147,5 +147,6 @@ export const deleteFavorite = async (req: Request, res: Response) => {
         const error: Error = new Error(req.t("server_error.deleting_favorite"));
         return res.status(500).json({error: error.message});
     }
-    return res.status(200).json({message: req.t("deleted.favorite")})
+    const favorites = await UserRepository.getFavorites(user.id);
+    return res.status(200).json(favorites);
 }
