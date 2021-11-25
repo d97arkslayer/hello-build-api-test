@@ -113,7 +113,7 @@ export const addFavorite = async (req: Request, res: Response) => {
     const favorite: Favorite = req.body;
     favorite.user_id = user.id;
     let favorites: Favorite[] = await UserRepository.getFavorites(user.id);
-    const existsFavorite = await FavoriteRepository.getFavoriteByUserAndUrl(favorite.url, user.id);
+    const existsFavorite = await FavoriteRepository.getFavoriteByUserAndGithubId(favorite.github_id, user.id);
     if (existsFavorite) {
         return res.status(200).json(favorites);
     }

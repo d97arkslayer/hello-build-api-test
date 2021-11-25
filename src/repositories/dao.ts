@@ -34,7 +34,7 @@ export default class {
             const createUsersTable = "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT, lastname TEXT,email TEXT, password TEXT)";
             db.run(createUsersTable);
 
-            const createFavoritesTable = "CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY AUTOINCREMENT,  user_id INTEGER, name TEXT,url TEXT)";
+            const createFavoritesTable = "CREATE TABLE IF NOT EXISTS favorites (id INTEGER PRIMARY KEY AUTOINCREMENT,  user_id INTEGER, name TEXT,description TEXT, github_id TEXT, created_at TEXT, owner TEXT)";
             db.run(createFavoritesTable);
 
             // Insert one default user

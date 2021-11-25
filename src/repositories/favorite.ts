@@ -13,9 +13,9 @@ export default class {
      * @param favorite
      */
     static async createFavorite(favorite: Favorite): Promise<boolean> {
-        const insertFavorites = "INSERT INTO favorites (name, url, user_id) VALUES (?,?,?);";
+        const insertFavorites = "INSERT INTO favorites (name, user_id, github_id, description, owner, created_at) VALUES (?,?,?,?,?,?);";
         try {
-            await dao.run(insertFavorites, [favorite.name, favorite.url, favorite.user_id]);
+            await dao.run(insertFavorites, [favorite.name, favorite.user_id, favorite.github_id, favorite.description, favorite.owner, favorite.created_at]);
             return true;
         } catch (ex) {
             logger.error(ex);
@@ -40,11 +40,11 @@ export default class {
 
     /**
      * Use to get favorite by user and url
-     * @param url
+     * @param githubId
      * @param userId
      */
-    static async getFavoriteByUserAndUrl(url: string, userId: number) {
-        const favorite = await dao.get("SELECT * FROM favorites WHERE user_id = ? and url=?;", [userId, url]);
+    static async getFavoriteByUserAndGithubId(githubId: string, userId: number) {
+        const favorite = await dao.get("SELECT * FROM favorites WHERE user_id = ? and github_id=?;", [userId, githubId]);
         return favorite as Favorite;
     }
 
